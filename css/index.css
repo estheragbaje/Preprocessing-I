@@ -138,12 +138,19 @@ header nav {
   display: flex;
   justify-content: space-evenly;
   margin-top: 40px;
+  padding: 20px;
   text-decoration: none;
 }
+.name {
+  font-size: 45px;
+}
+.name-subheadline {
+  font-size: 20px;
+}
 .container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-  background-color: antiquewhite;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -158,9 +165,39 @@ a {
   display: flex;
   justify-content: space-evenly;
   align-items: baseline;
+  padding: 20px 40px;
 }
 .top-contact {
   display: flex;
   justify-content: space-evenly;
-  align-items: baseline;
+  align-items: center;
+}
+.heading {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  line-height: 1.6;
+  color: skyblue;
+}
+.linkedin {
+  padding: 0 40%;
+}
+.work-experience {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  line-height: 1.6;
+}
+.group-header {
+  padding: 30px;
+}
+.paragraph {
+  line-height: 1.5;
+}
+.intro {
+  background: skyblue;
+  padding: 30px;
+}
+.bold-work-experience {
+  font-weight: 600;
 }
