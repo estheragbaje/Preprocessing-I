@@ -1,59 +1,190 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import "./reset.less";
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+// Font stack variables
+@bigHeadingSize: 70px;
+@regularHeadingSize: 30px;
+@smallHeadingSize: 25px;
+@normalFontSize: 15px;
+
+// Color variables
+@white: #fff;
+@gray: gray;
+@black: black;
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+.big-heading {
+  font-size: @bigHeadingSize;
+  font-weight: bold;
+  line-height: 1;
 }
 
-html, body {
-    height: 100%;
+.small-heading {
+  font-size: @smallHeadingSize;
+  line-height: 1.4;
 }
 
+.regular-heading {
+  font-size: @regularHeadingSize;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.normal-font {
+  font-size: @normalFontSize;
+  line-height: 1.4;
+  color: @gray;
+}
+
+.flex {
+  display: flex;
+
+  @media screen and(max-width: 500px) {
+    display: block;
+  }
+}
+
+.paddingY-60 {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1070px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin-left: auto;
+    height: 56px;
+
+    @media screen and (max-width: 500px) {
+      max-width: 100%;
+      padding: 0 40px;
+    }
+
+    a {
+      .normal-font();
+      text-decoration: none;
+    }
+  }
+}
+
+.header {
+  height: 500px;
+  background-color: @black;
+  color: @white;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+
+  .group {
+    max-width: 560px;
+
+    h1 {
+      .big-heading();
+    }
+
+    p {
+      .small-heading();
+    }
+
+    hr {
+      margin: 30px 0;
+    }
+
+    .icon-group {
+      display: flex;
+
+      i {
+        font-size: 2em;
+        color: @white;
+        margin-right: 16px;
+      }
+    }
+  }
+}
+
+.intro {
+  .flex();
+
+  padding: 120px 0;
+  .left-intro {
+    padding: 0 15px;
+  }
+  .right-intro {
+    padding: 0 15px;
+  }
+
+  h2 {
+    .regular-heading();
+  }
+
+  p {
+    .normal-font();
+  }
+}
+
+.interests {
+  .paddingY-60();
+  margin: -40px;
+
+  .interest {
+    .flex();
+
+    div {
+      margin: 40px;
+      h2 {
+        .regular-heading();
+        margin-bottom: 24px;
+      }
+
+      p {
+        .normal-font();
+      }
+    }
+  }
+}
+
+img {
+  .paddingY-60();
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+
+.experience {
+  h2 {
+    .regular-heading();
+    .paddingY-60();
+  }
+
+  .group {
+    display: flex;
+    justify-content: space-between;
+
+    .bold-experience {
+      font-weight: bold;
+    }
+  }
+}
+
+main {
+  margin-bottom: 48px;
+}
+
+footer {
+  background: @gray;
+  padding: 24px 0;
+}
