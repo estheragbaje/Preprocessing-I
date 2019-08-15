@@ -152,10 +152,48 @@ html {
   line-height: 1.4;
   color: gray;
 }
+.flex {
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  .flex {
+    display: block;
+  }
+}
+.paddingY-60 {
+  padding: 60px 0;
+}
+.container {
+  max-width: 1070px;
+  margin: 0 auto;
+}
+.text-center {
+  text-align: center;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  margin-left: auto;
+  height: 56px;
+}
+@media screen and (max-width: 500px) {
+  header nav {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+}
+header nav a {
+  font-size: 15px;
+  line-height: 1.4;
+  color: gray;
+  text-decoration: none;
+}
 .header {
   height: 500px;
   background-color: black;
-  color: white;
+  color: #fff;
   display: flex;
   align-items: center;
   padding: 0 10%;
@@ -179,13 +217,24 @@ html {
   display: flex;
 }
 .header .group .icon-group i {
-  font-size: 3em;
-  color: white;
+  font-size: 2em;
+  color: #fff;
   margin-right: 16px;
 }
 .intro {
   display: flex;
-  padding: 10% 10%;
+  padding: 120px 0;
+}
+@media screen and (max-width: 500px) {
+  .intro {
+    display: block;
+  }
+}
+.intro .left-intro {
+  padding: 0 15px;
+}
+.intro .right-intro {
+  padding: 0 15px;
 }
 .intro h2 {
   font-size: 30px;
@@ -196,4 +245,56 @@ html {
   font-size: 15px;
   line-height: 1.4;
   color: gray;
+}
+.interests {
+  padding: 60px 0;
+  margin: -40px;
+}
+.interests .interest {
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  .interests .interest {
+    display: block;
+  }
+}
+.interests .interest div {
+  margin: 40px;
+}
+.interests .interest div h2 {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.interests .interest div p {
+  font-size: 15px;
+  line-height: 1.4;
+  color: gray;
+}
+img {
+  padding: 60px 0;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+.experience h2 {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: bold;
+  padding: 60px 0;
+}
+.experience .group {
+  display: flex;
+  justify-content: space-between;
+}
+.experience .group .bold-experience {
+  font-weight: bold;
+}
+main {
+  margin-bottom: 48px;
+}
+footer {
+  background: gray;
+  padding: 24px 0;
 }

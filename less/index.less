@@ -1,9 +1,15 @@
 @import "./reset.less";
 
+// Font stack variables
 @bigHeadingSize: 70px;
 @regularHeadingSize: 30px;
 @smallHeadingSize: 25px;
 @normalFontSize: 15px;
+
+// Color variables
+@white: #fff;
+@gray: gray;
+@black: black;
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -30,13 +36,55 @@ html {
 .normal-font {
   font-size: @normalFontSize;
   line-height: 1.4;
-  color: gray;
+  color: @gray;
+}
+
+.flex {
+  display: flex;
+
+  @media screen and(max-width: 500px) {
+    display: block;
+  }
+}
+
+.paddingY-60 {
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1070px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin-left: auto;
+    height: 56px;
+
+    @media screen and (max-width: 500px) {
+      max-width: 100%;
+      padding: 0 40px;
+    }
+
+    a {
+      .normal-font();
+      text-decoration: none;
+    }
+  }
 }
 
 .header {
   height: 500px;
-  background-color: black;
-  color: white;
+  background-color: @black;
+  color: @white;
   display: flex;
   align-items: center;
   padding: 0 10%;
@@ -60,8 +108,8 @@ html {
       display: flex;
 
       i {
-        font-size: 3em;
-        color: white;
+        font-size: 2em;
+        color: @white;
         margin-right: 16px;
       }
     }
@@ -69,13 +117,74 @@ html {
 }
 
 .intro {
-  display: flex;
-  padding: 10% 10%;
+  .flex();
+
+  padding: 120px 0;
+  .left-intro {
+    padding: 0 15px;
+  }
+  .right-intro {
+    padding: 0 15px;
+  }
 
   h2 {
-    .regular-heading;
+    .regular-heading();
   }
+
   p {
-    .normal-font;
+    .normal-font();
   }
+}
+
+.interests {
+  .paddingY-60();
+  margin: -40px;
+
+  .interest {
+    .flex();
+
+    div {
+      margin: 40px;
+      h2 {
+        .regular-heading();
+        margin-bottom: 24px;
+      }
+
+      p {
+        .normal-font();
+      }
+    }
+  }
+}
+
+img {
+  .paddingY-60();
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+
+.experience {
+  h2 {
+    .regular-heading();
+    .paddingY-60();
+  }
+
+  .group {
+    display: flex;
+    justify-content: space-between;
+
+    .bold-experience {
+      font-weight: bold;
+    }
+  }
+}
+
+main {
+  margin-bottom: 48px;
+}
+
+footer {
+  background: @gray;
+  padding: 24px 0;
 }
